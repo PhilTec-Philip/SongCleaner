@@ -1,0 +1,530 @@
+{
+  "extName": {
+    "message": "SongCleaner",
+    "description": "Extension name"
+  },
+  "extDescription": {
+    "message": "Organize your Apple Music library by swiping – like Tinder, but for your music.",
+    "description": "Extension description"
+  },
+  "btnClose": {
+    "message": "Close",
+    "description": "Close button"
+  },
+  "btnCancel": {
+    "message": "Cancel",
+    "description": "Cancel button"
+  },
+  "btnConfirm": {
+    "message": "Confirm",
+    "description": "Confirm button"
+  },
+  "btnBack": {
+    "message": "Back",
+    "description": "Back button"
+  },
+  "btnUndo": {
+    "message": "Undo",
+    "description": "Undo button"
+  },
+  "btnNext": {
+    "message": "Next",
+    "description": "Next button"
+  },
+  "btnRetry": {
+    "message": "Retry",
+    "description": "Retry button"
+  },
+  "stateLoading": {
+    "message": "Loading …",
+    "description": "Loading state"
+  },
+  "stateError": {
+    "message": "Error",
+    "description": "Error title"
+  },
+  "stateReady": {
+    "message": "Ready",
+    "description": "Ready state"
+  },
+  "swipeTitle": {
+    "message": "Swipe",
+    "description": "Swipe view title"
+  },
+  "actionKeep": {
+    "message": "Keep",
+    "description": "Keep action"
+  },
+  "actionSortOut": {
+    "message": "Sort out",
+    "description": "Sort out action"
+  },
+  "actionBookmark": {
+    "message": "Bookmark",
+    "description": "Bookmark action"
+  },
+  "actionLove": {
+    "message": "Love",
+    "description": "Love action"
+  },
+  "hintSwipeLeft": {
+    "message": "Swipe left",
+    "description": "Left gesture"
+  },
+  "hintSwipeRight": {
+    "message": "Swipe right",
+    "description": "Right gesture"
+  },
+  "hintSwipeUp": {
+    "message": "Swipe up",
+    "description": "Up gesture"
+  },
+  "progressPrefix": {
+    "message": "Progress",
+    "description": "Progress prefix"
+  },
+  "reviewTitle": {
+    "message": "Your choices",
+    "description": "Review title"
+  },
+  "reviewEmpty": {
+    "message": "No decisions yet.",
+    "description": "Empty review"
+  },
+  "reviewSortedOut": {
+    "message": "Sorted out",
+    "description": "Review sorted out label"
+  },
+  "reviewKept": {
+    "message": "Kept",
+    "description": "Review kept label"
+  },
+  "reviewBookmarked": {
+    "message": "Bookmarked",
+    "description": "Review bookmarked label"
+  },
+  "reviewLoved": {
+    "message": "Loved",
+    "description": "Review loved label"
+  },
+  "commitButton": {
+    "message": "Confirm ({count})",
+    "description": "Confirm button with count"
+  },
+  "commitProgress": {
+    "message": "Applying … {done}/{total}",
+    "description": "Commit progress"
+  },
+  "commitFinalizing": {
+    "message": "Finishing …",
+    "description": "Finalizing commit"
+  },
+  "commitDone": {
+    "message": "Done! {sorted} sorted out, {kept} kept.",
+    "description": "Done message"
+  },
+  "commitError": {
+    "message": "There were problems: {error}",
+    "description": "Commit error"
+  },
+  "commitSortOutHint": {
+    "message": "Sorted-out songs are moved to a playlist – nothing is deleted.",
+    "description": "Hint before confirming"
+  },
+  "noSongs": {
+    "message": "No songs in this selection.",
+    "description": "Empty selection"
+  },
+  "btnReview": {
+    "message": "Review choices",
+    "description": "Open review"
+  },
+  "btnList": {
+    "message": "List view",
+    "description": "Open list view"
+  },
+  "btnCards": {
+    "message": "Card view",
+    "description": "Open card view"
+  },
+  "batchSortOut": {
+    "message": "Sort out selected",
+    "description": "Batch sort out"
+  },
+  "batchKeep": {
+    "message": "Keep selected",
+    "description": "Batch keep"
+  },
+  "batchBookmark": {
+    "message": "Bookmark selected",
+    "description": "Batch bookmark"
+  },
+  "batchClear": {
+    "message": "Clear selection",
+    "description": "Batch clear"
+  },
+  "selectedCount": {
+    "message": "{count} selected",
+    "description": "Selection count"
+  },
+  "previewOn": {
+    "message": "Preview on",
+    "description": "Preview on"
+  },
+  "previewOff": {
+    "message": "Preview off",
+    "description": "Preview off"
+  },
+  "searchPlaceholder": {
+    "message": "Search song or artist",
+    "description": "Search placeholder"
+  },
+  "decidedToday": {
+    "message": "Today: {count} decisions",
+    "description": "Daily counter"
+  },
+  "sessionDone": {
+    "message": "Session finished",
+    "description": "Session done"
+  },
+  "sourceMonth": {
+    "message": "Month",
+    "description": "Month source"
+  },
+  "sourcePlaylist": {
+    "message": "Playlist",
+    "description": "Playlist source"
+  },
+  "sourceSmart": {
+    "message": "Smart filters",
+    "description": "Smart filter source"
+  },
+  "sourceAll": {
+    "message": "All songs",
+    "description": "All songs source"
+  },
+  "smartRandom": {
+    "message": "Random",
+    "description": "Random smart filter"
+  },
+  "smartNeverPlayed": {
+    "message": "Never played",
+    "description": "Never played smart filter"
+  },
+  "smartForgotten": {
+    "message": "Forgotten",
+    "description": "Forgotten smart filter"
+  },
+  "smartBookmarked": {
+    "message": "Bookmarked",
+    "description": "Bookmarked smart filter"
+  },
+  "filterGenre": {
+    "message": "Genre",
+    "description": "Genre filter"
+  },
+  "filterDecade": {
+    "message": "Decade",
+    "description": "Decade filter"
+  },
+  "filterPlayCount": {
+    "message": "Min. play count",
+    "description": "Play count filter"
+  },
+  "filterLastPlayed": {
+    "message": "Last played",
+    "description": "Last played filter"
+  },
+  "lpYear": {
+    "message": "Not played for over a year",
+    "description": "Last played: older than a year"
+  },
+  "lpNever": {
+    "message": "Never played",
+    "description": "Last played: never"
+  },
+  "lpAny": {
+    "message": "Any",
+    "description": "Last played: any"
+  },
+  "statsTitle": {
+    "message": "Statistics",
+    "description": "Stats title"
+  },
+  "statsTotal": {
+    "message": "Total decisions",
+    "description": "Stats total"
+  },
+  "statsSortedOut": {
+    "message": "Sorted out",
+    "description": "Stats sorted out"
+  },
+  "statsKept": {
+    "message": "Kept",
+    "description": "Stats kept"
+  },
+  "statsBookmarked": {
+    "message": "Bookmarked",
+    "description": "Stats bookmarked"
+  },
+  "statsLoved": {
+    "message": "Loved",
+    "description": "Stats loved"
+  },
+  "statsStreak": {
+    "message": "Streak (days)",
+    "description": "Stats streak"
+  },
+  "statsBestStreak": {
+    "message": "Best streak",
+    "description": "Stats best streak"
+  },
+  "statsFreed": {
+    "message": "Storage freed (estimated)",
+    "description": "Stats storage freed"
+  },
+  "achievementsTitle": {
+    "message": "Achievements",
+    "description": "Achievements title"
+  },
+  "achFirstSweep": {
+    "message": "First Sweep",
+    "description": "First sweep achievement"
+  },
+  "achFirstSweepDesc": {
+    "message": "Make your first decision",
+    "description": "First sweep description"
+  },
+  "ach50": {
+    "message": "In the Groove",
+    "description": "50 achievement"
+  },
+  "ach50Desc": {
+    "message": "Made 50 decisions",
+    "description": "50 description"
+  },
+  "ach100": {
+    "message": "Tidied Up",
+    "description": "100 achievement"
+  },
+  "ach100Desc": {
+    "message": "Made 100 decisions",
+    "description": "100 description"
+  },
+  "ach1000": {
+    "message": "Curation Pro",
+    "description": "1000 achievement"
+  },
+  "ach1000Desc": {
+    "message": "Made 1000 decisions",
+    "description": "1000 description"
+  },
+  "achStreak3": {
+    "message": "Keep Going",
+    "description": "3 day streak achievement"
+  },
+  "achStreak3Desc": {
+    "message": "Sorted on 3 consecutive days",
+    "description": "3 day streak description"
+  },
+  "achStreak7": {
+    "message": "Discipline",
+    "description": "7 day streak achievement"
+  },
+  "achStreak7Desc": {
+    "message": "Sorted on 7 consecutive days",
+    "description": "7 day streak description"
+  },
+  "ach100Sorted": {
+    "message": "Big Cleanup",
+    "description": "100 sorted out achievement"
+  },
+  "ach100SortedDesc": {
+    "message": "Sorted out 100 songs",
+    "description": "100 sorted out description"
+  },
+  "achFreed1": {
+    "message": "Room Made",
+    "description": "Storage achievement"
+  },
+  "achFreed1Desc": {
+    "message": "Freed 1 GB of storage (estimated)",
+    "description": "Storage achievement description"
+  },
+  "playlistSorted": {
+    "message": "Sorted out",
+    "description": "Sorted out playlist name"
+  },
+  "playlistBookmarked": {
+    "message": "SongCleaner – Bookmarked",
+    "description": "Bookmarked playlist name"
+  },
+  "popupTitle": {
+    "message": "SongCleaner",
+    "description": "Popup title"
+  },
+  "popupSource": {
+    "message": "Source",
+    "description": "Popup source"
+  },
+  "popupMonths": {
+    "message": "Month",
+    "description": "Popup month"
+  },
+  "popupStart": {
+    "message": "Start sorting",
+    "description": "Popup start"
+  },
+  "popupResume": {
+    "message": "Resume current session",
+    "description": "Popup: resume"
+  },
+  "popupSessionFound": {
+    "message": "A session is in progress.",
+    "description": "Popup: running session hint"
+  },
+  "popupNewSession": {
+    "message": "Start a new session",
+    "description": "Popup: start fresh"
+  },
+  "popupStartDemo": {
+    "message": "Start demo mode",
+    "description": "Popup demo"
+  },
+  "popupNotOnApple": {
+    "message": "Please open music.apple.com and sign in, then retry here.",
+    "description": "Popup hint: not on Apple Music"
+  },
+  "popupNoToken": {
+    "message": "No Apple Music session detected. Reload music.apple.com once.",
+    "description": "Popup hint: no token"
+  },
+  "popupOpenApple": {
+    "message": "Open music.apple.com",
+    "description": "Popup: open Apple Music button"
+  },
+  "lblAutoPreview": {
+    "message": "Auto preview",
+    "description": "Preview setting"
+  },
+  "lblPreviewSeconds": {
+    "message": "Preview length (seconds)",
+    "description": "Preview seconds setting"
+  },
+  "lblSuggestLess": {
+    "message": "Mark sorted out as 'Suggest Less'",
+    "description": "Suggest less setting"
+  },
+  "lblDailyLimit": {
+    "message": "Daily limit (0 = unlimited)",
+    "description": "Daily limit setting"
+  },
+  "lblLanguage": {
+    "message": "Language",
+    "description": "Language setting"
+  },
+  "confirmDailyLimitReached": {
+    "message": "Daily limit reached. Continue tomorrow or raise the limit in settings.",
+    "description": "Limit reached"
+  },
+  "openOptions": {
+    "message": "Settings",
+    "description": "Popup settings"
+  },
+  "openStats": {
+    "message": "Statistics",
+    "description": "Popup stats"
+  },
+  "miniTitle": {
+    "message": "SongCleaner Mini Player",
+    "description": "Mini player title"
+  },
+  "miniToggle": {
+    "message": "Open / Close",
+    "description": "Mini player toggle button"
+  },
+  "miniReady": {
+    "message": "Ready.",
+    "description": "Mini player ready status"
+  },
+  "miniDone": {
+    "message": "Done.",
+    "description": "Mini player done status"
+  },
+  "miniOpenApple": {
+    "message": "Open music.apple.com …",
+    "description": "Mini player open apple hint"
+  },
+  "miniNoSession": {
+    "message": "No active session.",
+    "description": "Mini player no session status"
+  },
+  "miniNoConnection": {
+    "message": "No connection.",
+    "description": "Mini player no connection status"
+  },
+  "miniHint": {
+    "message": "The mini player controls the music tab. Open music.apple.com to get started.",
+    "description": "Mini player hint"
+  },
+  "nowPlaying": {
+    "message": "Now playing",
+    "description": "Now playing"
+  },
+  "achNew": {
+    "message": "Achievement unlocked: {name}",
+    "description": "Achievement toast"
+  },
+  "sourceNeedChoice": {
+    "message": "Please choose a source first.",
+    "description": "Popup warning"
+  },
+  "btnOpenSwipe": {
+    "message": "Open SongCleaner",
+    "description": "Popup: open overlay"
+  },
+  "pageReloadHint": {
+    "message": "Page reloaded? The extension is ready now.",
+    "description": "Hint after reload"
+  },
+  "resetSection": {
+    "message": "Reset",
+    "description": "Reset section title"
+  },
+  "resetDecisions": {
+    "message": "Reset ratings",
+    "description": "Button: delete decisions"
+  },
+  "resetDecisionsDesc": {
+    "message": "Delete all made decisions – every title becomes sortable again.",
+    "description": "Reset decisions description"
+  },
+  "resetDecisionsConfirm": {
+    "message": "Really delete all decisions?",
+    "description": "Confirm deleting decisions"
+  },
+  "resetStats": {
+    "message": "Reset stats & achievements",
+    "description": "Button: delete stats"
+  },
+  "resetStatsDesc": {
+    "message": "Reset counters, streaks and achievements.",
+    "description": "Reset stats description"
+  },
+  "resetStatsConfirm": {
+    "message": "Really reset stats & achievements?",
+    "description": "Confirm resetting stats"
+  },
+  "lblPlaylistBlacklist": {
+    "message": "Playlist blacklist",
+    "description": "Setting: excluded playlists"
+  },
+  "lblBlacklistHint": {
+    "message": "Selected playlists are hidden from the picker – changes are saved automatically.",
+    "description": "Playlist blacklist hint"
+  },
+  "lblBlacklistNeedTab": {
+    "message": "Open https://music.apple.com in a tab to load your playlists.",
+    "description": "Blacklist: no Apple Music tab"
+  }
+}

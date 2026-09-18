@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <title>SongCleaner</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; width: 340px; font-family: var(--font-mono); background: var(--bg-body);
+      color: var(--text); font-size: 13px; line-height: 1.6; }
+    header { display: flex; align-items: center; gap: 10px; padding: 12px 14px;
+      border-bottom: 1px solid var(--border); background: var(--bg-card); }
+    .logo { width: 28px; height: 28px; flex: none; border: 1px solid var(--accent); background: var(--accent);
+      color: var(--on-accent); display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display); font-size: 13px; }
+    .brand { font-family: var(--font-display); font-size: 15px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--text-head); }
+    .dot { width: 9px; height: 9px; background: var(--ok); margin-left: auto; }
+    .dot.off { background: var(--danger); }
+    .dot.mid { background: var(--warn); }
+    section { padding: 12px 14px; border-bottom: 1px solid var(--border); }
+    .sec-title { font-family: var(--font-display); font-size: 12px; text-transform: uppercase;
+      letter-spacing: 2px; color: var(--text-head); margin-bottom: 8px; }
+    .sec-title::before { content: '[ '; color: var(--accent); }
+    .sec-title::after { content: ' ]'; color: var(--accent); }
+    .row { display: flex; align-items: center; gap: 8px; padding: 6px 0; }
+    label { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+    input[type=radio], input[type=checkbox] { accent-color: var(--accent); }
+    select, input[type=number], input[type=text] { width: 100%; padding: 8px 10px; border: 1px solid var(--border);
+      background: var(--input-bg); color: var(--text); font-size: 13px; outline: none; font-family: var(--font-mono); }
+    select:focus, input:focus { border-color: var(--accent); }
+    select option { background: var(--input-bg); color: var(--text); }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    #filterGenreCustom { margin-top: 6px; }
+    .plist { max-height: 170px; overflow-y: auto; width: 100%; border: 1px solid var(--border);
+      background: var(--input-bg); padding: 4px; }
+    .pitem { display: flex; align-items: center; gap: 8px; padding: 6px 8px; cursor: pointer; }
+    .pitem:hover { background: var(--bg-alt); }
+    .pempty { padding: 8px; color: var(--text-muted); }
+    details#blacklistBox { padding: 10px 14px 12px; border-bottom: 1px solid var(--border); }
+    details#blacklistBox summary { cursor: pointer; font-family: var(--font-display); font-size: 12px;
+      text-transform: uppercase; letter-spacing: 2px; color: var(--text-head); list-style: none; }
+    details#blacklistBox summary::-webkit-details-marker { display: none; }
+    details#blacklistBox summary::before { content: '> '; color: var(--accent); }
+    details#blacklistBox[open] summary::before { content: 'v '; }
+    details#blacklistBox .plist { margin-top: 8px; }
+    details#blacklistBox .desc { color: var(--text-muted); font-size: 11px; margin-top: 6px; line-height: 1.5; }
+    .hidden { display: none !important; }
+    .muted { color: var(--text-muted); font-size: 12px; line-height: 1.5; }
+    .hint { padding: 10px 14px; font-size: 12px; color: var(--warn); border-bottom: 1px solid var(--border);
+      line-height: 1.5; display: none; }
+    .hint::before { content: '! '; font-weight: 700; }
+    footer { display: flex; gap: 8px; padding: 12px 14px; }
+    .resume { padding: 0 14px 12px; font-size: 12px; display: flex; align-items: center;
+      justify-content: space-between; gap: 8px; }
+    .resume a { color: var(--accent); font-weight: 700; text-decoration: none; white-space: nowrap; }
+    button { border: 1px solid var(--border); cursor: pointer; font-size: 13px; font-weight: 700;
+      color: var(--text); padding: 11px 14px; font-family: var(--font-mono); background: transparent;
+      display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+      text-transform: uppercase; letter-spacing: 1px; }
+    .primary { flex: 1; background: var(--accent); border-color: var(--accent); color: var(--on-accent);
+      box-shadow: 4px 4px 0 var(--shadow-sm); transition: background .08s linear, color .08s linear,
+      box-shadow .08s linear, transform .08s linear; }
+    .primary:hover { background: transparent; color: var(--accent); }
+    .primary:active { transform: translate(2px, 2px); box-shadow: none; }
+    .primary:disabled { opacity: .45; cursor: default; }
+    .ghost { color: var(--text-muted); }
+    .ghost:hover { border-color: var(--accent); color: var(--accent); }
+  </style>
+  <script src="lib/theme.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">SC</div>
+    <div class="brand">SongCleaner</div>
+    <div class="dot" id="statusDot"></div>
+  </header>
+
+  <div class="hint" id="hint"></div>
+
+  <section>
+    <div class="sec-title" data-i18n="popupSource">Quelle</div>
+    <div class="row"><label><input type="radio" name="source" value="all" checked><span data-i18n="sourceAll">Alle Songs</span></label></div>
+    <div class="row"><label><input type="radio" name="source" value="month"><span data-i18n="sourceMonth">Monat</span></label></div>
+    <div class="row hidden" id="monthRow"><select id="monthSelect"></select></div>
+    <div class="row"><label><input type="radio" name="source" value="playlist"><span data-i18n="sourcePlaylist">Playlist</span></label></div>
+    <div class="row hidden" id="playlistRow"><div class="plist" id="playlistList"></div></div>
+    <div class="row"><label><input type="radio" name="source" value="smart"><span data-i18n="sourceSmart">Smarte Filter</span></label></div>
+    <div class="row hidden" id="smartRow">
+      <select id="smartSelect">
+        <option value="random">Zufall</option>
+        <option value="neverPlayed">Nie abgespielt</option>
+        <option value="forgotten">Vergessen</option>
+      </select>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-title" data-i18n="filterGenre">Filter</div>
+    <div class="grid2">
+      <div>
+        <select id="filterGenre"><option value="">Alle Genres</option><option value="__custom__">… eigenes Genre</option></select>
+        <input type="text" id="filterGenreCustom" class="hidden" placeholder="Genre">
+      </div>
+      <div><select id="filterDecade"><option value="">Jahrzehnt</option></select></div>
+      <div><input type="number" id="filterPlayCount" min="0" placeholder="Min. Spiele"></div>
+      <div><select id="filterLastPlayed">
+        <option value="">Zuletzt gehört</option>
+        <option value="year">über 1 Jahr</option>
+        <option value="never">nie</option>
+      </select></div>
+      <div><select id="orderSelect">
+        <option value="">Reihenfolge</option>
+        <option value="oldest">Älteste zuerst</option>
+        <option value="newest">Neueste zuerst</option>
+        <option value="title">Titel</option>
+        <option value="artist">Künstler</option>
+      </select></div>
+    </div>
+  </section>
+
+  <details id="blacklistBox">
+    <summary data-i18n="lblPlaylistBlacklist">Playlist-Blacklist</summary>
+    <div class="plist" id="blacklistList"></div>
+    <div class="desc" id="blacklistHint"></div>
+  </details>
+
+  <footer>
+    <button class="ghost" id="optionsBtn" title="Einstellungen"></button>
+    <button class="primary" id="startBtn">Sortieren starten</button>
+  </footer>
+  <div class="resume hidden" id="resumeRow">
+    <span id="resumeText" class="muted">Laufende Sitzung gefunden.</span>
+    <a href="#" id="freshSession">Neue Sitzung starten</a>
+  </div>
+
+  <script src="lib/i18n.js"></script>
+  <script src="lib/utils.js"></script>
+  <script src="lib/storage.js"></script>
+  <script src="lib/icons.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

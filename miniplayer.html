@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <title>SongCleaner – Miniplayer</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; width: 260px; font-family: var(--font-mono); background: var(--bg-body);
+      color: var(--text); font-size: 13px; line-height: 1.6; }
+    .head { padding: 10px 12px; font-family: var(--font-display); font-size: 13px; letter-spacing: 2px;
+      text-transform: uppercase; border-bottom: 1px solid var(--border); background: var(--bg-card);
+      color: var(--text-head); display: flex; align-items: center; gap: 8px; }
+    .logo { width: 20px; height: 20px; border: 1px solid var(--accent); background: var(--accent);
+      color: var(--on-accent); display: inline-flex; align-items: center; justify-content: center; font-size: 10px; }
+    .status { padding: 8px 12px; color: var(--text-muted); font-size: 11px; min-height: 15px; }
+    .buttons { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; padding: 10px 12px; }
+    button { border: 1px solid var(--border); padding: 10px 6px; font-size: 12px; font-weight: 700;
+      cursor: pointer; background: transparent; color: var(--text); font-family: var(--font-mono);
+      display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+      text-transform: uppercase; letter-spacing: 1px;
+      transition: border-color .08s linear, color .08s linear, background .08s linear; }
+    button:hover { border-color: var(--accent); color: var(--accent); }
+    button.sortout:hover { border-color: var(--danger); color: var(--danger); }
+    button.keep:hover { border-color: var(--ok); color: var(--ok); }
+    .open { width: calc(100% - 24px); margin: 0 12px 12px; padding: 10px; background: var(--accent);
+      border-color: var(--accent); color: var(--on-accent); font-weight: 700;
+      box-shadow: 4px 4px 0 var(--shadow-sm); }
+    .open:hover { background: transparent; color: var(--accent); }
+  </style>
+  <script src="lib/theme.js"></script>
+</head>
+<body>
+  <div class="head"><span class="logo">SC</span> SongCleaner</div>
+  <div class="status" id="status"></div>
+  <div class="buttons">
+    <button class="sortout" id="sortout"></button>
+    <button class="love" id="love"></button>
+    <button class="keep" id="keep"></button>
+  </div>
+  <button class="open" id="open"></button>
+
+  <script src="lib/i18n.js"></script>
+  <script src="lib/storage.js"></script>
+  <script src="lib/icons.js"></script>
+  <script src="miniplayer.js"></script>
+</body>
+</html>

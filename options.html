@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <title>SongCleaner – Einstellungen</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0 auto; max-width: 680px; background: var(--bg-body); color: var(--text);
+      padding: 24px 18px 60px; font-family: var(--font-mono); font-size: 14px; line-height: 1.7; }
+    .brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-size: 22px;
+      letter-spacing: 2px; text-transform: uppercase; color: var(--text-head); margin-bottom: 6px; }
+    .logo { width: 30px; height: 30px; border: 1px solid var(--accent); background: var(--accent); color: var(--on-accent);
+      display: inline-flex; align-items: center; justify-content: center; font-size: 14px; }
+    .sub { color: var(--text-muted); font-size: 13px; margin-bottom: 24px; }
+    h2 { font-family: var(--font-display); font-size: 14px; margin: 28px 0 10px; color: var(--text-head);
+      text-transform: uppercase; letter-spacing: 2px; }
+    h2::before { content: '[ '; color: var(--accent); }
+    h2::after { content: ' ]'; color: var(--accent); }
+    .card { background: var(--bg-card); border: 1px solid var(--border); box-shadow: 4px 4px 0 var(--shadow-sm);
+      padding: 16px; }
+    .row { display: flex; align-items: center; gap: 10px; padding: 8px 0; }
+    .row + .row { border-top: 1px solid var(--border); }
+    label { flex: 1; }
+    .lbl { font-weight: 600; color: var(--text-head); }
+    .desc { display: block; color: var(--text-muted); font-size: 12px; margin-top: 2px; }
+    textarea, select, input[type=number], input[type=text] { padding: 8px 10px; border: 1px solid var(--border);
+      background: var(--input-bg); color: var(--text); font-size: 13px; outline: none; width: 140px;
+      font-family: var(--font-mono); }
+    textarea { width: 100%; resize: vertical; margin-top: 8px; }
+    select:focus, input:focus, textarea:focus { border-color: var(--accent); }
+    select option { background: var(--input-bg); color: var(--text); }
+    input[type=checkbox] { width: 18px; height: 18px; accent-color: var(--accent); }
+    .ok { color: var(--ok); }
+    button { font-family: var(--font-mono); cursor: pointer; }
+    button.danger { background: transparent; color: var(--danger); border: 1px solid var(--danger); padding: 9px 14px;
+      font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;
+      transition: background .08s linear, color .08s linear; }
+    button.danger:hover { background: var(--danger); color: var(--on-accent); }
+  </style>
+  <script src="lib/theme.js"></script>
+</head>
+<body>
+  <div class="brand"><span class="logo">SC</span> SongCleaner</div>
+  <div class="sub" id="sub"></div>
+
+  <h2 id="hGeneral"></h2>
+  <div class="card">
+    <div class="row">
+      <label><span class="lbl" data-i18nl="lblLanguage">Sprache</span></label>
+      <select id="language">
+        <option value="de">Deutsch</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+    <div class="row">
+      <label><span class="lbl" data-i18nl="lblAutoPreview">Auto-Vorschau</span><span class="desc" data-i18nd="lblAutoPreview">Vorschau</span></label>
+      <input type="checkbox" id="autoPreview">
+    </div>
+    <div class="row">
+      <label><span class="lbl" data-i18nl="lblSuggestLess">„Weniger vorschlagen“</span></label>
+      <input type="checkbox" id="suggestLess">
+    </div>
+  </div>
+
+  <h2 id="hReset"></h2>
+  <div class="card">
+    <div class="row">
+      <label><span class="lbl" id="resetLbl">Bewertungen zurücksetzen</span><span class="desc" id="resetDesc"></span></label>
+      <button class="danger" id="resetDecisions">Zurücksetzen</button>
+    </div>
+  </div>
+
+  <script src="lib/i18n.js"></script>
+  <script src="lib/storage.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

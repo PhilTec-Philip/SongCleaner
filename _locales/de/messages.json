@@ -1,0 +1,530 @@
+{
+  "extName": {
+    "message": "SongCleaner",
+    "description": "Name der Erweiterung"
+  },
+  "extDescription": {
+    "message": "Organisiere deine Apple Music Mediathek mit Swipes – wie Tinder, aber für deine Musik.",
+    "description": "Beschreibung der Erweiterung"
+  },
+  "btnClose": {
+    "message": "Schließen",
+    "description": "Schließen-Button"
+  },
+  "btnCancel": {
+    "message": "Abbrechen",
+    "description": "Abbrechen-Button"
+  },
+  "btnConfirm": {
+    "message": "Bestätigen",
+    "description": "Bestätigen-Button"
+  },
+  "btnBack": {
+    "message": "Zurück",
+    "description": "Zurück-Button"
+  },
+  "btnUndo": {
+    "message": "Rückgängig",
+    "description": "Rückgängig-Button"
+  },
+  "btnNext": {
+    "message": "Weiter",
+    "description": "Weiter-Button"
+  },
+  "btnRetry": {
+    "message": "Erneut versuchen",
+    "description": "Erneut versuchen Button"
+  },
+  "stateLoading": {
+    "message": "Lädt …",
+    "description": "Ladeanzeige"
+  },
+  "stateError": {
+    "message": "Fehler",
+    "description": "Fehlertitel"
+  },
+  "stateReady": {
+    "message": "Bereit",
+    "description": "Bereit-Anzeige"
+  },
+  "swipeTitle": {
+    "message": "Sortieren",
+    "description": "Titel der Sortieransicht"
+  },
+  "actionKeep": {
+    "message": "Behalten",
+    "description": "Behalten-Aktion"
+  },
+  "actionSortOut": {
+    "message": "Aussortieren",
+    "description": "Aussortieren-Aktion"
+  },
+  "actionBookmark": {
+    "message": "Merken",
+    "description": "Merken-Aktion"
+  },
+  "actionLove": {
+    "message": "Liken",
+    "description": "Liken-Aktion"
+  },
+  "hintSwipeLeft": {
+    "message": "Wischen nach links",
+    "description": "Geste links"
+  },
+  "hintSwipeRight": {
+    "message": "Wischen nach rechts",
+    "description": "Geste rechts"
+  },
+  "hintSwipeUp": {
+    "message": "Wischen nach oben",
+    "description": "Geste oben"
+  },
+  "progressPrefix": {
+    "message": "Fortschritt",
+    "description": "Fortschrittstext Präfix"
+  },
+  "reviewTitle": {
+    "message": "Deine Auswahl",
+    "description": "Titel Review"
+  },
+  "reviewEmpty": {
+    "message": "Noch keine Entscheidungen getroffen.",
+    "description": "Review leer"
+  },
+  "reviewSortedOut": {
+    "message": "Aussortiert",
+    "description": "Review-Label aussortiert"
+  },
+  "reviewKept": {
+    "message": "Behalten",
+    "description": "Review-Label behalten"
+  },
+  "reviewBookmarked": {
+    "message": "Gemerkt",
+    "description": "Review-Label gemerkt"
+  },
+  "reviewLoved": {
+    "message": "Gelikt",
+    "description": "Review-Label gelikt"
+  },
+  "commitButton": {
+    "message": "Bestätigen ({count})",
+    "description": "Bestätigen-Button mit Anzahl"
+  },
+  "commitProgress": {
+    "message": "Übernehme … {done}/{total}",
+    "description": "Fortschritt beim Bestätigen"
+  },
+  "commitFinalizing": {
+    "message": "Schließe ab …",
+    "description": "Abschluss beim Bestätigen"
+  },
+  "commitDone": {
+    "message": "Fertig! {sorted} aussortiert, {kept} behalten.",
+    "description": "Fertig-Meldung"
+  },
+  "commitError": {
+    "message": "Beim Übernehmen gab es Probleme: {error}",
+    "description": "Fehler beim Committen"
+  },
+  "commitSortOutHint": {
+    "message": "Aussortierte Songs wandern in eine Playlist – gelöscht wird nichts.",
+    "description": "Hinweis vor dem Bestätigen"
+  },
+  "noSongs": {
+    "message": "Keine Songs in dieser Auswahl.",
+    "description": "Leere Auswahl"
+  },
+  "btnReview": {
+    "message": "Auswahl prüfen",
+    "description": "Review öffnen"
+  },
+  "btnList": {
+    "message": "Listenansicht",
+    "description": "Listenansicht öffnen"
+  },
+  "btnCards": {
+    "message": "Kartenansicht",
+    "description": "Kartenansicht öffnen"
+  },
+  "batchSortOut": {
+    "message": "Ausgewählte aussortieren",
+    "description": "Batch aussortieren"
+  },
+  "batchKeep": {
+    "message": "Ausgewählte behalten",
+    "description": "Batch behalten"
+  },
+  "batchBookmark": {
+    "message": "Ausgewählte merken",
+    "description": "Batch merken"
+  },
+  "batchClear": {
+    "message": "Auswahl aufheben",
+    "description": "Batch Auswahl leeren"
+  },
+  "selectedCount": {
+    "message": "{count} ausgewählt",
+    "description": "Auswahl-Anzahl"
+  },
+  "previewOn": {
+    "message": "Vorschau an",
+    "description": "Vorschau an"
+  },
+  "previewOff": {
+    "message": "Vorschau aus",
+    "description": "Vorschau aus"
+  },
+  "searchPlaceholder": {
+    "message": "Titel oder Künstler suchen",
+    "description": "Suchfeld Platzhalter"
+  },
+  "decidedToday": {
+    "message": "Heute: {count} Entscheidungen",
+    "description": "Tageszähler"
+  },
+  "sessionDone": {
+    "message": "Sitzung abgeschlossen",
+    "description": "Sitzung fertig"
+  },
+  "sourceMonth": {
+    "message": "Monat",
+    "description": "Quelle Monat"
+  },
+  "sourcePlaylist": {
+    "message": "Playlist",
+    "description": "Quelle Playlist"
+  },
+  "sourceSmart": {
+    "message": "Smarte Filter",
+    "description": "Quelle Smart Filter"
+  },
+  "sourceAll": {
+    "message": "Alle Songs",
+    "description": "Quelle alle Songs"
+  },
+  "smartRandom": {
+    "message": "Zufällig",
+    "description": "Smart Filter Zufällig"
+  },
+  "smartNeverPlayed": {
+    "message": "Nie abgespielt",
+    "description": "Smart Filter Nie abgespielt"
+  },
+  "smartForgotten": {
+    "message": "Vergessen",
+    "description": "Smart Filter Vergessen"
+  },
+  "smartBookmarked": {
+    "message": "Gemerkt",
+    "description": "Smart Filter Gemerkt"
+  },
+  "filterGenre": {
+    "message": "Genre",
+    "description": "Filter Genre"
+  },
+  "filterDecade": {
+    "message": "Jahrzehnt",
+    "description": "Filter Jahrzehnt"
+  },
+  "filterPlayCount": {
+    "message": "Min. Abspielzahl",
+    "description": "Filter Abspielzahl"
+  },
+  "filterLastPlayed": {
+    "message": "Zuletzt gehört",
+    "description": "Filter letztes Hören"
+  },
+  "lpYear": {
+    "message": "Seit über einem Jahr nicht gehört",
+    "description": "Letztes Hören: älter als ein Jahr"
+  },
+  "lpNever": {
+    "message": "Nie gehört",
+    "description": "Letztes Hören: nie"
+  },
+  "lpAny": {
+    "message": "Egal",
+    "description": "Letztes Hören: egal"
+  },
+  "statsTitle": {
+    "message": "Statistiken",
+    "description": "Statistik-Titel"
+  },
+  "statsTotal": {
+    "message": "Entscheidungen gesamt",
+    "description": "Statistik gesamt"
+  },
+  "statsSortedOut": {
+    "message": "Aussortiert",
+    "description": "Statistik aussortiert"
+  },
+  "statsKept": {
+    "message": "Behalten",
+    "description": "Statistik behalten"
+  },
+  "statsBookmarked": {
+    "message": "Gemerkt",
+    "description": "Statistik gemerkt"
+  },
+  "statsLoved": {
+    "message": "Gelikt",
+    "description": "Statistik gelikt"
+  },
+  "statsStreak": {
+    "message": "Serie (Tage)",
+    "description": "Statistik Serie"
+  },
+  "statsBestStreak": {
+    "message": "Beste Serie",
+    "description": "Statistik beste Serie"
+  },
+  "statsFreed": {
+    "message": "Speicher freigegeben (geschätzt)",
+    "description": "Statistik freigegebener Speicher"
+  },
+  "achievementsTitle": {
+    "message": "Erfolge",
+    "description": "Achievements-Titel"
+  },
+  "achFirstSweep": {
+    "message": "Erster Sweep",
+    "description": "Achievement Erstes Mal"
+  },
+  "achFirstSweepDesc": {
+    "message": "Triff deine erste Entscheidung",
+    "description": "Achievement Beschreibung Erstes Mal"
+  },
+  "ach50": {
+    "message": "In Fahrt",
+    "description": "Achievement 50"
+  },
+  "ach50Desc": {
+    "message": "50 Entscheidungen getroffen",
+    "description": "Achievement 50 Beschreibung"
+  },
+  "ach100": {
+    "message": "Aufgeräumt",
+    "description": "Achievement 100"
+  },
+  "ach100Desc": {
+    "message": "100 Entscheidungen getroffen",
+    "description": "Achievement 100 Beschreibung"
+  },
+  "ach1000": {
+    "message": "Kuratier-Profi",
+    "description": "Achievement 1000"
+  },
+  "ach1000Desc": {
+    "message": "1000 Entscheidungen getroffen",
+    "description": "Achievement 1000 Beschreibung"
+  },
+  "achStreak3": {
+    "message": "Dranbleiben",
+    "description": "Achievement Serie 3"
+  },
+  "achStreak3Desc": {
+    "message": "3 Tage in Folge sortiert",
+    "description": "Achievement Serie 3 Beschreibung"
+  },
+  "achStreak7": {
+    "message": "Disziplin",
+    "description": "Achievement Serie 7"
+  },
+  "achStreak7Desc": {
+    "message": "7 Tage in Folge sortiert",
+    "description": "Achievement Serie 7 Beschreibung"
+  },
+  "ach100Sorted": {
+    "message": "Große Kehrung",
+    "description": "Achievement 100 aussortiert"
+  },
+  "ach100SortedDesc": {
+    "message": "100 Songs aussortiert",
+    "description": "Achievement 100 aussortiert Beschreibung"
+  },
+  "achFreed1": {
+    "message": "Platz geschaffen",
+    "description": "Achievement Speicher"
+  },
+  "achFreed1Desc": {
+    "message": "1 GB Speicher freigegeben (geschätzt)",
+    "description": "Achievement Speicher Beschreibung"
+  },
+  "playlistSorted": {
+    "message": "Aussortiert",
+    "description": "Name der Aussortiert-Playlist"
+  },
+  "playlistBookmarked": {
+    "message": "SongCleaner – Gemerkt",
+    "description": "Name der Gemerkt-Playlist"
+  },
+  "popupTitle": {
+    "message": "SongCleaner",
+    "description": "Popup-Titel"
+  },
+  "popupSource": {
+    "message": "Quelle",
+    "description": "Popup Quelle"
+  },
+  "popupMonths": {
+    "message": "Monat",
+    "description": "Popup Monat"
+  },
+  "popupStart": {
+    "message": "Sortieren starten",
+    "description": "Popup Start"
+  },
+  "popupResume": {
+    "message": "Laufende Sitzung fortsetzen",
+    "description": "Popup: fortsetzen"
+  },
+  "popupSessionFound": {
+    "message": "Laufende Sitzung gefunden.",
+    "description": "Popup: Hinweis laufende Sitzung"
+  },
+  "popupNewSession": {
+    "message": "Neue Sitzung starten",
+    "description": "Popup: neue Sitzung starten"
+  },
+  "popupStartDemo": {
+    "message": "Demo-Modus starten",
+    "description": "Popup Demo"
+  },
+  "popupNotOnApple": {
+    "message": "Bitte öffne music.apple.com und melde dich an, dann starte hier erneut.",
+    "description": "Popup Hinweis: nicht auf Apple Music"
+  },
+  "popupNoToken": {
+    "message": "Keine Apple-Music-Sitzung erkannt. Lade music.apple.com einmal neu.",
+    "description": "Popup Hinweis: kein Token"
+  },
+  "popupOpenApple": {
+    "message": "music.apple.com öffnen",
+    "description": "Popup: Apple Music öffnen Button"
+  },
+  "lblAutoPreview": {
+    "message": "Auto-Vorschau",
+    "description": "Einstellung Auto-Vorschau"
+  },
+  "lblPreviewSeconds": {
+    "message": "Vorschau-Dauer (Sekunden)",
+    "description": "Einstellung Vorschau-Dauer"
+  },
+  "lblSuggestLess": {
+    "message": "Aussortierte als „Weniger vorschlagen“ markieren",
+    "description": "Einstellung Suggest Less"
+  },
+  "lblDailyLimit": {
+    "message": "Tageslimit (0 = unbegrenzt)",
+    "description": "Einstellung Tageslimit"
+  },
+  "lblLanguage": {
+    "message": "Sprache",
+    "description": "Einstellung Sprache"
+  },
+  "confirmDailyLimitReached": {
+    "message": "Tageslimit erreicht. Morgen geht es weiter oder du erhöhst das Limit in den Einstellungen.",
+    "description": "Limit erreicht"
+  },
+  "openOptions": {
+    "message": "Einstellungen",
+    "description": "Popup Einstellungen"
+  },
+  "openStats": {
+    "message": "Statistiken",
+    "description": "Popup Statistiken"
+  },
+  "miniTitle": {
+    "message": "SongCleaner Mini-Player",
+    "description": "Mini-Player Titel"
+  },
+  "miniToggle": {
+    "message": "Öffnen / Schließen",
+    "description": "Mini-Player Umschalter"
+  },
+  "miniReady": {
+    "message": "Bereit.",
+    "description": "Mini-Player bereit"
+  },
+  "miniDone": {
+    "message": "Erledigt.",
+    "description": "Mini-Player erledigt"
+  },
+  "miniOpenApple": {
+    "message": "Öffne music.apple.com …",
+    "description": "Mini-Player Hinweis"
+  },
+  "miniNoSession": {
+    "message": "Keine aktive Sitzung.",
+    "description": "Mini-Player keine Sitzung"
+  },
+  "miniNoConnection": {
+    "message": "Keine Verbindung.",
+    "description": "Mini-Player keine Verbindung"
+  },
+  "miniHint": {
+    "message": "Mini-Player steuert das Musik-Tab. Öffne music.apple.com, um loszulegen.",
+    "description": "Mini-Player Hinweis"
+  },
+  "nowPlaying": {
+    "message": "Läuft gerade",
+    "description": "Jetzt spielt"
+  },
+  "achNew": {
+    "message": "Erfolg freigeschaltet: {name}",
+    "description": "Achievement Toasts"
+  },
+  "sourceNeedChoice": {
+    "message": "Bitte wähle zuerst eine Quelle.",
+    "description": "Popup Warnung"
+  },
+  "btnOpenSwipe": {
+    "message": "SongCleaner öffnen",
+    "description": "Popup: Overlay öffnen"
+  },
+  "pageReloadHint": {
+    "message": "Seite nachgeladen? Die Erweiterung ist jetzt bereit.",
+    "description": "Hinweis nach Reload"
+  },
+  "resetSection": {
+    "message": "Zurücksetzen",
+    "description": "Abschnittstitel Zurücksetzen"
+  },
+  "resetDecisions": {
+    "message": "Bewertungen zurücksetzen",
+    "description": "Button: Entscheidungen löschen"
+  },
+  "resetDecisionsDesc": {
+    "message": "Alle getroffenen Entscheidungen löschen – alle Titel werden wieder einsortiert.",
+    "description": "Beschreibung Entscheidungen zurücksetzen"
+  },
+  "resetDecisionsConfirm": {
+    "message": "Alle Entscheidungen wirklich löschen?",
+    "description": "Bestätigung Entscheidungen löschen"
+  },
+  "resetStats": {
+    "message": "Statistiken & Erfolge zurücksetzen",
+    "description": "Button: Statistiken löschen"
+  },
+  "resetStatsDesc": {
+    "message": "Zähler, Serien und Erfolge auf null.",
+    "description": "Beschreibung Statistiken zurücksetzen"
+  },
+  "resetStatsConfirm": {
+    "message": "Statistiken & Erfolge wirklich zurücksetzen?",
+    "description": "Bestätigung Statistiken löschen"
+  },
+  "lblPlaylistBlacklist": {
+    "message": "Playlist-Blacklist",
+    "description": "Einstellung: ausgeschlossene Playlists"
+  },
+  "lblBlacklistHint": {
+    "message": "Ausgewählte Playlists werden in der Auswahl nicht angezeigt – Änderungen werden automatisch gespeichert.",
+    "description": "Hinweis zur Playlist-Blacklist"
+  },
+  "lblBlacklistNeedTab": {
+    "message": "Öffne https://music.apple.com in einem Tab, um deine Playlists zu laden.",
+    "description": "Blacklist: kein Apple-Music-Tab"
+  }
+}
