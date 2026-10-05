@@ -359,6 +359,10 @@
     "message": "SongCleaner – Bookmarked",
     "description": "Bookmarked playlist name"
   },
+  "playlistUnavailable": {
+    "message": "SongCleaner – Unavailable",
+    "description": "Playlist name for unavailable songs"
+  },
   "popupTitle": {
     "message": "SongCleaner",
     "description": "Popup title"
@@ -519,12 +523,24 @@
     "message": "Playlist blacklist",
     "description": "Setting: excluded playlists"
   },
-  "lblBlacklistHint": {
-    "message": "Selected playlists are hidden from the picker – changes are saved automatically.",
-    "description": "Playlist blacklist hint"
+  "librarySection": {
+    "message": "Library",
+    "description": "Library section title"
   },
-  "lblBlacklistNeedTab": {
-    "message": "Open https://music.apple.com in a tab to load your playlists.",
-    "description": "Blacklist: no Apple Music tab"
+  "lblSortUnavailable": {
+    "message": "Sort out unavailable songs",
+    "description": "Setting: sort out unavailable songs"
+  },
+  "sortUnavailableDesc": {
+    "message": "Songs that are no longer available or playable on Apple Music are moved to a playlist automatically when a session starts.",
+    "description": "Unavailable songs description"
+  },
+  "scanMovingUnavailable": {
+    "message": "Moving unavailable songs … {count}",
+    "description": "Progress while moving unavailable songs"
+  },
+  "footerIssues": {
+    "message": "Issues",
+    "description": "Footer: report issues"
   }
 }

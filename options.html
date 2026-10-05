@@ -9,8 +9,6 @@
       padding: 24px 18px 60px; font-family: var(--font-mono); font-size: 14px; line-height: 1.7; }
     .brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-size: 22px;
       letter-spacing: 2px; text-transform: uppercase; color: var(--text-head); margin-bottom: 6px; }
-    .logo { width: 30px; height: 30px; border: 1px solid var(--accent); background: var(--accent); color: var(--on-accent);
-      display: inline-flex; align-items: center; justify-content: center; font-size: 14px; }
     .sub { color: var(--text-muted); font-size: 13px; margin-bottom: 24px; }
     h2 { font-family: var(--font-display); font-size: 14px; margin: 28px 0 10px; color: var(--text-head);
       text-transform: uppercase; letter-spacing: 2px; }
@@ -31,6 +29,20 @@
     select option { background: var(--input-bg); color: var(--text); }
     input[type=checkbox] { width: 18px; height: 18px; accent-color: var(--accent); }
     .ok { color: var(--ok); }
+    .hidden { display: none !important; }
+    footer { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 6px 12px;
+      margin-top: 28px; padding-top: 14px; border-top: 1px solid var(--border); color: var(--text-muted);
+      font-size: 12px; }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .foot-links { display: inline-flex; align-items: center; gap: 6px; justify-self: start; }
+    .foot-copy { justify-self: center; text-align: center; }
+    #version { justify-self: end; }
+    .foot-sep { color: var(--border); }
+    @media (max-width: 520px) {
+      footer { grid-template-columns: 1fr auto; }
+      .foot-copy { grid-column: 1 / -1; grid-row: 1; justify-self: center; }
+    }
     button { font-family: var(--font-mono); cursor: pointer; }
     button.danger { background: transparent; color: var(--danger); border: 1px solid var(--danger); padding: 9px 14px;
       font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;
@@ -40,35 +52,53 @@
   <script src="lib/theme.js"></script>
 </head>
 <body>
-  <div class="brand"><span class="logo">SC</span> SongCleaner</div>
+  <div class="brand">SongCleaner</div>
   <div class="sub" id="sub"></div>
 
   <h2 id="hGeneral"></h2>
   <div class="card">
     <div class="row">
-      <label><span class="lbl" data-i18nl="lblLanguage">Sprache</span></label>
+      <label for="language"><span class="lbl" data-i18nl="lblLanguage">Sprache</span></label>
       <select id="language">
         <option value="de">Deutsch</option>
         <option value="en">English</option>
       </select>
     </div>
     <div class="row">
-      <label><span class="lbl" data-i18nl="lblAutoPreview">Auto-Vorschau</span><span class="desc" data-i18nd="lblAutoPreview">Vorschau</span></label>
+      <label for="autoPreview"><span class="lbl" data-i18nl="lblAutoPreview">Auto-Vorschau</span><span class="desc" data-i18nd="lblAutoPreview">Vorschau</span></label>
       <input type="checkbox" id="autoPreview">
     </div>
     <div class="row">
-      <label><span class="lbl" data-i18nl="lblSuggestLess">„Weniger vorschlagen“</span></label>
+      <label for="suggestLess"><span class="lbl" data-i18nl="lblSuggestLess">„Weniger vorschlagen“</span></label>
       <input type="checkbox" id="suggestLess">
+    </div>
+  </div>
+
+  <h2 id="hLibrary"></h2>
+  <div class="card">
+    <div class="row">
+      <label for="sortUnavailable"><span class="lbl" id="sortUnavailableLbl">Nicht verfügbare Songs aussortieren</span><span class="desc" id="sortUnavailableDesc"></span></label>
+      <input type="checkbox" id="sortUnavailable">
     </div>
   </div>
 
   <h2 id="hReset"></h2>
   <div class="card">
     <div class="row">
-      <label><span class="lbl" id="resetLbl">Bewertungen zurücksetzen</span><span class="desc" id="resetDesc"></span></label>
+      <label for="resetDecisions"><span class="lbl" id="resetLbl">Bewertungen zurücksetzen</span><span class="desc" id="resetDesc"></span></label>
       <button class="danger" id="resetDecisions">Zurücksetzen</button>
     </div>
   </div>
+
+  <footer>
+    <span class="foot-links">
+      <a href="https://github.com/PhilTec-Philip/SongCleaner" target="_blank" rel="noreferrer noopener">GitHub</a>
+      <span class="foot-sep">·</span>
+      <a href="https://github.com/PhilTec-Philip/SongCleaner/issues" target="_blank" rel="noreferrer noopener" id="issuesLink"></a>
+    </span>
+    <span class="foot-copy">Copyright <a href="https://github.com/PhilTec-Philip" target="_blank" rel="noreferrer noopener">PhilTec-Philip</a> 2026</span>
+    <span id="version"></span>
+  </footer>
 
   <script src="lib/i18n.js"></script>
   <script src="lib/storage.js"></script>

@@ -29,7 +29,6 @@
   const freshSession = $('freshSession');
   const blacklistBox = $('blacklistBox');
   const blacklistList = $('blacklistList');
-  const blacklistHint = $('blacklistHint');
 
   const Store = root.Store;
 
@@ -220,7 +219,6 @@
       if (resp && resp.ok && Array.isArray(resp.playlists)) {
         allPlaylists = resp.playlists;
       }
-      blacklistHint.textContent = t('lblBlacklistHint');
       renderBlacklist();
     } catch (e) { /* */ }
   }
@@ -353,7 +351,6 @@
       const summary = blacklistBox.querySelector('summary');
       if (summary) summary.textContent = t('lblPlaylistBlacklist');
     }
-    if (blacklistHint && !blacklistHint.textContent) blacklistHint.textContent = t('lblBlacklistHint');
     const titles = document.querySelectorAll('.sec-title');
     if (titles.length) titles[0].textContent = t('popupSource');
     if (titles.length > 1) titles[1].textContent = t('filterGenre');

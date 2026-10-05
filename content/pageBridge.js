@@ -177,11 +177,28 @@
     if (state.authorization) headers.authorization = 'Bearer ' + state.authorization;
     if (state.mediaUserToken) headers['media-user-token'] = state.mediaUserToken;
     reqOptions.headers = Object.assign({}, reqOptions.headers, headers);
-    const res = await originalFetch.call(window, url, reqOptions);
+    let res;
+    try {
+      res = await originalFetch.call(window, url, reqOptions);
+    } catch (e) {
+      console.error('[SongCleaner] fetch fehlgeschlagen', { url, method: reqOptions.method }, e);
+      throw e;
+    }
     let data = null;
     const text = await res.text();
     if (text) {
       try { data = JSON.parse(text); } catch (e) { data = text; }
+    }
+    if (!res.ok) {
+      console.error('[SongCleaner] HTTP-Fehler', {
+        url,
+        method: reqOptions.method,
+        status: res.status,
+        statusText: res.statusText,
+        hasAuth: Boolean(state.authorization),
+        hasMediaUserToken: Boolean(state.mediaUserToken),
+        body: data
+      });
     }
     return { status: res.status, ok: res.ok, data };
   }

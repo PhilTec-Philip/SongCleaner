@@ -356,8 +356,12 @@
     "description": "Name der Aussortiert-Playlist"
   },
   "playlistBookmarked": {
-    "message": "SongCleaner – Gemerkt",
-    "description": "Name der Gemerkt-Playlist"
+    "message": "SongCleaner – Markiert",
+    "description": "Name der Markiert-Playlist"
+  },
+  "playlistUnavailable": {
+    "message": "SongCleaner – Nicht verfügbar",
+    "description": "Name der Playlist für nicht verfügbare Songs"
   },
   "popupTitle": {
     "message": "SongCleaner",
@@ -519,12 +523,24 @@
     "message": "Playlist-Blacklist",
     "description": "Einstellung: ausgeschlossene Playlists"
   },
-  "lblBlacklistHint": {
-    "message": "Ausgewählte Playlists werden in der Auswahl nicht angezeigt – Änderungen werden automatisch gespeichert.",
-    "description": "Hinweis zur Playlist-Blacklist"
+  "librarySection": {
+    "message": "Bibliothek",
+    "description": "Abschnittstitel Bibliothek"
   },
-  "lblBlacklistNeedTab": {
-    "message": "Öffne https://music.apple.com in einem Tab, um deine Playlists zu laden.",
-    "description": "Blacklist: kein Apple-Music-Tab"
+  "lblSortUnavailable": {
+    "message": "Nicht verfügbare Songs aussortieren",
+    "description": "Einstellung: nicht verfügbare Songs aussortieren"
+  },
+  "sortUnavailableDesc": {
+    "message": "Songs, die auf Apple Music nicht mehr verfügbar und anhörbar sind, werden beim Start der Aussortierung automatisch in eine Playlist verschoben.",
+    "description": "Beschreibung nicht verfügbare Songs"
+  },
+  "scanMovingUnavailable": {
+    "message": "Nicht verfügbare Songs werden verschoben … {count}",
+    "description": "Fortschritt beim Verschieben nicht verfügbarer Songs"
+  },
+  "footerIssues": {
+    "message": "Issues",
+    "description": "Footer: Issues melden"
   }
 }

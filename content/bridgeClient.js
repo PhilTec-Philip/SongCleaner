@@ -13,13 +13,18 @@
   }
 
   function request(method, args, timeoutMs) {
-    const id = nextId();
-    return new Promise((resolve, reject) => {
+      const id = nextId();
+      if (method !== 'hello') {
+        console.debug('[SongCleaner] Bridge-Anfrage', method, args);
+      }
+      return new Promise((resolve, reject) => {
+
       const timer = window.setTimeout(() => {
         pending.delete(id);
+        console.error('[SongCleaner] Bridge-Timeout', { method, timeoutMs: timeoutMs || 20000 });
         reject(new Error('BRIDGE_TIMEOUT:' + method));
       }, timeoutMs || 20000);
-      pending.set(id, { resolve, reject, timer });
+      pending.set(id, { resolve, reject, timer, method });
       window.postMessage({ __ss: 1, type: 'ss:req', id, method, args }, '*');
     });
   }
@@ -46,10 +51,14 @@
       if (!entry) return;
       window.clearTimeout(entry.timer);
       pending.delete(data.id);
+      if (entry.method === 'fetchJson' && data.ok && data.result && data.result.status < 400) {
+        console.debug('[SongCleaner] Bridge-Antwort', entry.method, data.result.status, data.result.data && data.result.data.next);
+      }
       if (data.ok) entry.resolve(data.result);
       else {
         const err = new Error((data.error && data.error.message) || 'BRIDGE_ERROR');
         err.name = (data.error && data.error.name) || 'BRIDGE_ERROR';
+        console.error('[SongCleaner] Bridge-Fehler', { method: data.method || null }, err);
         entry.reject(err);
       }
       return;

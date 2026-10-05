@@ -12,6 +12,14 @@
 
   async function api(path, options, retries) {
     const result = await Bridge.request('fetchJson', { path: BASE + path, options }, 30000);
+    if (result.status >= 400) {
+      console.error('[SongCleaner] API-Fehler', {
+        method: (options && options.method) || 'GET',
+        path: BASE + path,
+        status: result.status,
+        detail: result.data
+      });
+    }
     if (result.status === 401 || result.status === 403) {
       const tokens = await Bridge.getTokens().catch(() => null);
       if (tokens && !(tokens.authorization && tokens.mediaUserToken)) {
@@ -56,6 +64,7 @@
       id: raw.id,
       libraryId: raw.id,
       catalogId: (a.playParams && a.playParams.id) || null,
+      playable: Boolean(a.playParams && a.playParams.id),
       title: a.name || 'Unbekannter Titel',
       artist: a.artistName || 'Unbekannter Künstler',
       album: a.albumName || null,
@@ -74,12 +83,29 @@
     };
   }
 
-  async function getAllLibrarySongs(onProgress) {
+  function isUnavailable(raw) {
+    const a = (raw && raw.attributes) || {};
+    return !(a.playParams && a.playParams.id);
+  }
+
+  async function scanLibrarySongs(onProgress) {
     await Bridge.waitForTokens();
-    return paginate(
+    const items = await paginate(
       (offset) => `/v1/me/library/songs?limit=${PAGE_SIZE}&offset=${offset}&include=playCountData`,
       onProgress
-    ).then((items) => items.map(normalizeSong));
+    );
+    const playable = [];
+    const unavailable = [];
+    for (const raw of items) {
+      if (isUnavailable(raw)) unavailable.push(normalizeSong(raw));
+      else playable.push(normalizeSong(raw));
+    }
+    return { playable, unavailable };
+  }
+
+  async function getAllLibrarySongs(onProgress) {
+    const result = await scanLibrarySongs(onProgress);
+    return result.playable;
   }
 
   async function listPlaylists() {
@@ -176,6 +202,7 @@
     api,
     normalizeSong,
     getAllLibrarySongs,
+    scanLibrarySongs,
     listPlaylists,
     getPlaylistTracks,
     findPlaylistByName,

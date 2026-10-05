@@ -9,9 +9,6 @@
       color: var(--text); font-size: 13px; line-height: 1.6; }
     header { display: flex; align-items: center; gap: 10px; padding: 12px 14px;
       border-bottom: 1px solid var(--border); background: var(--bg-card); }
-    .logo { width: 28px; height: 28px; flex: none; border: 1px solid var(--accent); background: var(--accent);
-      color: var(--on-accent); display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-display); font-size: 13px; }
     .brand { font-family: var(--font-display); font-size: 15px; letter-spacing: 2px; text-transform: uppercase;
       color: var(--text-head); }
     .dot { width: 9px; height: 9px; background: var(--ok); margin-left: auto; }
@@ -43,7 +40,6 @@
     details#blacklistBox summary::before { content: '> '; color: var(--accent); }
     details#blacklistBox[open] summary::before { content: 'v '; }
     details#blacklistBox .plist { margin-top: 8px; }
-    details#blacklistBox .desc { color: var(--text-muted); font-size: 11px; margin-top: 6px; line-height: 1.5; }
     .hidden { display: none !important; }
     .muted { color: var(--text-muted); font-size: 12px; line-height: 1.5; }
     .hint { padding: 10px 14px; font-size: 12px; color: var(--warn); border-bottom: 1px solid var(--border);
@@ -70,7 +66,6 @@
 </head>
 <body>
   <header>
-    <div class="logo">SC</div>
     <div class="brand">SongCleaner</div>
     <div class="dot" id="statusDot"></div>
   </header>
@@ -121,7 +116,6 @@
   <details id="blacklistBox">
     <summary data-i18n="lblPlaylistBlacklist">Playlist-Blacklist</summary>
     <div class="plist" id="blacklistList"></div>
-    <div class="desc" id="blacklistHint"></div>
   </details>
 
   <footer>

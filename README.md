@@ -6,6 +6,7 @@ A Chrome extension to clean up your Apple Music library — swipe through your s
 
 - **Swipe, tap, press**: sort out, keep and love via gesture, mouse, keyboard or buttons
 - Card and list view with search and multi-select
+- Songs that are no longer available or playable on Apple Music are moved to a **"Unavailable"** playlist — they are never sorted through
 - Sorted-out songs are moved to the **"Sorted out"** playlist — nothing is ever deleted
 - Keeping and loving set the Apple Music rating (♥)
 - Optional: mark sorted-out songs as "Suggest Less" in Apple Music
@@ -48,6 +49,7 @@ Requires a Chromium-based browser (Chrome/Edge/Brave) version 114 or newer...
 - **Auto preview** – plays the song when it is shown
 - **"Suggest Less"** – marks sorted-out songs accordingly in Apple Music
 - **Language** – English / German
+- **Unavailable songs** are collected in a separate playlist automatically when a session starts (can be switched off)
 - **Reset** – delete all made decisions
 
 The **playlist blacklist** is managed directly in the popup (expand the "Playlist blacklist" section and tick playlists).

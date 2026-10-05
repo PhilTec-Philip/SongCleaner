@@ -14,6 +14,11 @@
   const resetDecisionsBtn = $('resetDecisions');
   const resetLbl = $('resetLbl');
   const resetDesc = $('resetDesc');
+  const sortUnavailable = $('sortUnavailable');
+  const sortUnavailableLbl = $('sortUnavailableLbl');
+  const sortUnavailableDesc = $('sortUnavailableDesc');
+  const version = $('version');
+  const issuesLink = $('issuesLink');
 
   function tt(key, fallback) {
     const msg = t(key);
@@ -22,10 +27,13 @@
 
   function applyStaticI18n() {
     $('hGeneral').textContent = tt('lblLanguage', 'General');
+    $('hLibrary').textContent = tt('librarySection', 'Library');
     $('hReset').textContent = tt('resetSection', 'Reset');
     $('sub').textContent = 'SongCleaner – Apple Music';
     resetLbl.textContent = tt('resetDecisions', 'Reset ratings');
     resetDesc.textContent = tt('resetDecisionsDesc', 'Delete all made decisions – every title becomes sortable again.');
+    sortUnavailableLbl.textContent = tt('lblSortUnavailable', 'Sort out unavailable songs');
+    sortUnavailableDesc.textContent = tt('sortUnavailableDesc', 'Songs that are no longer available on Apple Music are moved to a playlist automatically when a session starts.');
     document.querySelectorAll('[data-i18nl]').forEach((node) => {
       const msg = t(node.getAttribute('data-i18nl'));
       if (msg !== node.getAttribute('data-i18nl')) node.textContent = msg;
@@ -39,6 +47,7 @@
     language.value = settings.language || 'en';
     autoPreview.checked = settings.autoPreview;
     suggestLess.checked = settings.suggestLess;
+    sortUnavailable.checked = settings.sortUnavailable !== false;
     applyStaticI18n();
   }
 
@@ -58,6 +67,10 @@
 
   autoPreview.addEventListener('change', () => debouncedSave('autoPreview', autoPreview.checked));
   suggestLess.addEventListener('change', () => debouncedSave('suggestLess', suggestLess.checked));
+  sortUnavailable.addEventListener('change', () => {
+    debouncedSave('sortUnavailable', sortUnavailable.checked);
+    notifyTabs('ss:refresh-settings');
+  });
 
   async function notifyTabs(type) {
     const tabs = await chrome.tabs.query({ url: ['https://music.apple.com/*'] });
@@ -76,6 +89,12 @@
     await notifyReset();
     applyStaticI18n();
   });
+
+  if (version) {
+    try { version.textContent = 'v' + chrome.runtime.getManifest().version; } catch (e) { /* */ }
+  }
+
+  if (issuesLink) issuesLink.textContent = tt('footerIssues', 'Issues');
 
   loadSettings();
 })();

@@ -43,8 +43,23 @@
   function appleDataSource() {
     return {
       isLive: true,
+      pendingUnavailable: [],
       async getAllSongs(onProgress) {
-        return API.getAllLibrarySongs(onProgress);
+        const scan = await API.scanLibrarySongs(onProgress);
+        this.pendingUnavailable = scan.unavailable;
+        return scan.playable;
+      },
+      async moveUnavailableToPlaylist(songs, onProgress) {
+        if (!songs || !songs.length) return { moved: 0, failed: 0 };
+        const refs = songs.filter((s) => s.libraryId);
+        if (!refs.length) return { moved: 0, failed: songs.length };
+        try {
+          await this.ensurePlaylist(t('playlistUnavailable'), refs, onProgress);
+          return { moved: refs.length, failed: songs.length - refs.length };
+        } catch (e) {
+          console.error('[SongCleaner] Nicht verfügbare Songs konnten nicht verschoben werden', e);
+          return { moved: 0, failed: songs.length, error: String(e) };
+        }
       },
       async listPlaylists() {
         const playlists = await API.listPlaylists();
@@ -180,7 +195,12 @@
             if (!session) session = await Core.buildSession({ type: 'all' }, ds, { onProgress });
           } else {
             await Core.clearSavedSession();
-            session = await Core.buildSession(source, ds, { onProgress });
+            session = await Core.buildSession(source, ds, {
+              onProgress,
+              onUnavailable: (count) => {
+                if (typeof onProgress === 'function') onProgress(t('scanMovingUnavailable', { count }));
+              }
+            });
             Core.saveSession(session, { immediate: true });
           }
           if (!session.queue.length) {
